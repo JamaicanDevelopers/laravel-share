@@ -165,14 +165,14 @@ class Share
         if (is_null($this->title)) {
             $this->title = config('laravel-share.services.telegram.text');
         }
-        
+
+        $base = config('laravel-share.services.telegram.uri');
         if ( $iv && !is_null($rhash) ) {
-            $base = config('laravel-share.services.telegram.iv_uri', "https://t.me/iv");
-            $url .= '&rhash='.$rhash
+            $iv_base = config('laravel-share.services.telegram.iv_uri', "https://t.me/iv");
+            $url = $base .'?text=' . urlencode($this->title). '&url='. $iv_base. '?url='.$this->url .urlencode('&rhash='.$rhash);
         } else {
-            $base = config('laravel-share.services.telegram.uri');
+            $url = $base . '?url=' . $this->url . '&text=' . urlencode($this->title);
         }
-        $url = $base . '?url=' . $this->url . '&text=' . urlencode($this->title);
 
         $this->buildLink('telegram', $url);
 

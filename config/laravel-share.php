@@ -38,6 +38,7 @@ return [
         ],
         'telegram' => [
             'uri' => 'https://telegram.me/share/url',
+            'iv_uri' => 'https://t.me/iv',
             'text' => 'Default share text',
         ],
     ],

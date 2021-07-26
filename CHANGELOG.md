@@ -61,4 +61,5 @@ Breaking changes:
 Other changes:
 - Updated the Linkedin base url to the 2020 version
 - Updated the Pintreset base url to use https 
+- Added support for Telegram Instant View
 
