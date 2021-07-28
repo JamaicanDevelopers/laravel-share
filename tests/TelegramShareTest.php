@@ -24,7 +24,7 @@ class TelegramShareTest extends TestCase
     public function it_can_generate_a_telegram_share_instant_view_link_with_default_share_text()
     {
         $result = ShareFacade::page('https://codeswitch.be')->telegram(true, "606060");
-        $expected = '<div id="social-links"><ul><li><a target="_blank" href="https://t.me/iv?url=https://codeswitch.be&text=Default+share+text&rhash=606060" class="social-button " id="" title=""><span class="fab fa-telegram"></span></a></li></ul></div>';
+        $expected = '<div id="social-links"><ul><li><a target="_blank" href="https://telegram.me/share/url?url=https://t.me/iv?url=https://codeswitch.be&text=Default+share+text&rhash=606060" class="social-button " id="" title=""><span class="fab fa-telegram"></span></a></li></ul></div>';
 
         $this->assertEquals($expected, (string)$result);
     }
@@ -48,7 +48,7 @@ class TelegramShareTest extends TestCase
     {
         $result = ShareFacade::page('https://codeswitch.be', 'Meet Joren Van Hocht a php developer with a passion for laravel')
             ->telegram(true, "606060");
-        $expected = '<div id="social-links"><ul><li><a target="_blank" href="https://t.me/iv?url=https://codeswitch.be&text=Meet+Joren+Van+Hocht+a+php+developer+with+a+passion+for+laravel&rhash=606060" class="social-button " id="" title=""><span class="fab fa-telegram"></span></a></li></ul></div>';
+        $expected = '<div id="social-links"><ul><li><a target="_blank" href="https://telegram.me/share/url?url=https://t.me/iv?url=https://codeswitch.be&text=Meet+Joren+Van+Hocht+a+php+developer+with+a+passion+for+laravel&rhash=606060" class="social-button " id="" title=""><span class="fab fa-telegram"></span></a></li></ul></div>';
 
         $this->assertEquals($expected, (string)$result);
     }
