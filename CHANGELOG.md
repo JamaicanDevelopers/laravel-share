@@ -63,3 +63,5 @@ Other changes:
 - Updated the Pintreset base url to use https 
 - Added support for Telegram Instant View
 
+## 4.1.0 - 2021-08-09
+- Added support for "rel" attribute on the generated share links
